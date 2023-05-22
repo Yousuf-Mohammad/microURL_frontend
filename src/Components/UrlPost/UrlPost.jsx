@@ -32,6 +32,7 @@ const UrlPost = () => {
 
     return (
         <div>
+            <h1>Drop Your URL to get a shortened version</h1>
             <form onSubmit={handleSubmit}>
 
                 <input
