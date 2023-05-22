@@ -1,11 +1,12 @@
 import React from 'react';
+import "./CopyButton.css"
 
 const CopyButton = ({ text }) => {
     const handleCopy = () => {
         navigator.clipboard.writeText(text)
             .then(() => {
                 alert('Text copied to clipboard:', text);
-                // You can add a success message or perform other actions here
+
             })
             .catch((error) => {
                 console.error('Error copying text to clipboard:', error);
@@ -14,7 +15,7 @@ const CopyButton = ({ text }) => {
     };
 
     return (
-        <button onClick={handleCopy}>Copy</button>
+        <button className='copy' onClick={handleCopy}>Copy</button>
     );
 };
 

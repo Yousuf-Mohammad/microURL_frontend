@@ -1,0 +1,33 @@
+.heading {
+    font-weight: bolder;
+
+}
+
+
+.postBox {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    width: 520px;
+    height: 50px;
+    background-color: rgba(250, 235, 215, 0.658);
+
+
+}
+
+.submitButton {
+    background-color: #416680;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.submitButton:hover {
+    border-radius: 50px;
+}
+
+.shortLink {
+    color: rgb(45, 45, 131);
+    font-weight: bold;
+}

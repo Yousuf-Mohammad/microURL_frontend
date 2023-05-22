@@ -7,10 +7,10 @@ const UrlBox = ({ urls }) => {
     let shortened = `https://microurl.onrender.com/${urls.shortId}`
     return (
 
-        <div>
-            <h3>Your Url : {urls.redirectURL}</h3>
-            <p>Shorten Url : <span>{shortened}</span> <CopyButton text={shortened} /></p>
-            <p>Visited through the Shorten Url : {urls.visitHistory.length}</p>
+        <div className='urlBox'>
+            <h3><b>Your Url : {urls.redirectURL}</b> </h3>
+            <h4>Shorten Url : <span className='urlSpan'>{shortened}</span> <CopyButton text={shortened} /></h4>
+            <h5>Visited through the Shorten Url : <b>{urls.visitHistory.length}</b> </h5>
         </div>
     );
 }

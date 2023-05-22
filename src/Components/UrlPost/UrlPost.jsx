@@ -32,7 +32,7 @@ const UrlPost = () => {
 
     return (
         <div>
-            <h1>Drop Your URL to get a shortened version</h1>
+            <h1 className='heading'>Drop Your URL to get a shortened version </h1>
             <form onSubmit={handleSubmit}>
 
                 <input
@@ -41,13 +41,14 @@ const UrlPost = () => {
                     placeholder="Your URL"
                     value={formData.url}
                     onChange={handleChange}
+                    className='postBox'
                 />
 
 
-                <button type="submit">Submit</button>
+                <button className='submitButton' type="submit">Submit</button>
             </form>
 
-            {shortId ? <div><p>Shorten URL : <span>{shortenUrl}</span> <CopyButton text={shortenUrl} /></p> </div> : null}
+            {shortId ? <div><h4>Shorten URL : <span className='shortLink'>{shortenUrl}</span> <CopyButton text={shortenUrl} /></h4> </div> : null}
         </div>
     );
 }

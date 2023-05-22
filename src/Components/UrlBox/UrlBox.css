@@ -1,0 +1,12 @@
+.urlBox {
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 40px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.urlSpan {
+    color: rgb(45, 45, 131);
+    font-weight: bold;
+}
