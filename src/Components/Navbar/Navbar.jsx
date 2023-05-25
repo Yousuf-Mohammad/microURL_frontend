@@ -1,46 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import "./Navbar.css"
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Link, useMatch } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from "../../Assets/image/onlinelogomaker-052223-0614-7674.png"
+import "./Navbar.css"
+
 
 
 const NaVbar = () => {
+    const homeMatch = useMatch('/');
+    const statsMatch = useMatch('/stats');
+    const aboutMatch = useMatch('/about');
+
     return (
         <div className="navbarStyle">
-            <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
-                <Container >
-                    <Navbar.Brand href="/"><img src={logo} width={220} alt="" /></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <Nav
-                            className="me-auto my-5 my-lg-3 "
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
 
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand as={Link} to="/"><img src={logo} width={220} alt="" /></Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
 
+                        <Nav className="ml-auto">
+                            <Nav.Link as={Link} to="/" active={homeMatch}>
+                                Home
+                            </Nav.Link>
+
+                            <Nav.Link as={Link} to="/stats" active={statsMatch}>
+                                Stats
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/about" active={aboutMatch}>
+                                AboutUs
+                            </Nav.Link>
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
+
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+
+        </div >
     );
 }
 

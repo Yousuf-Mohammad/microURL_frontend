@@ -19,6 +19,7 @@ const UrlPost = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+
         axios.post('https://microurl.onrender.com/url', formData)
             .then(res => {
                 setShortId(res.data.id)
@@ -33,13 +34,14 @@ const UrlPost = () => {
     return (
         <div>
             <h1 className='heading'>Drop Your URL to get a shortened version </h1>
+            <p>(Please do not give space before or in between the link)</p>
             <form onSubmit={handleSubmit}>
 
                 <input
                     type="text"
                     name="url"
                     placeholder="Your URL"
-                    value={formData.url}
+                    value={formData.url.trim()}
                     onChange={handleChange}
                     className='postBox'
                 />

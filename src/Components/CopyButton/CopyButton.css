@@ -10,3 +10,17 @@
 .copy:hover {
     border-radius: 50px;
 }
+
+@media screen and (max-width: 480px) {
+    .copy {
+        background-color: #416680;
+        color: white;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        margin-left: 5px;
+        font-size: 16px;
+        text-overflow: ellipsis;
+
+    }
+
+}
